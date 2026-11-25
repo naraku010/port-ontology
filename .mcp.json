@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "port-ontology": {
+      "command": "./src-tauri/target/debug/port-ontology.exe",
+      "args": ["--mcp"]
+    }
+  }
+}

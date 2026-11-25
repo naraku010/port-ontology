@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Operations-console palette. Semantic tokens only; components never use raw hex. */
+@theme {
+  --color-bg: #0b1220;
+  --color-panel: #111a2c;
+  --color-panel-2: #16223a;
+  --color-line: #24324d;
+  --color-ink: #e6ecf5;
+  --color-muted: #8a9ab5;
+  --color-accent: #4f9dff;
+  --color-root: #ff5d5d;
+  --color-shift: #f5a524;
+  --color-ok: #2fbf71;
+  --color-reefer: #38c6d9;
+  --color-dg: #c77dff;
+  --font-sans: "Pretendard Variable", Pretendard, "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: "Cascadia Mono", Consolas, "Pretendard Variable", ui-monospace, monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Keep "--mcp" and "->" literal in code samples. */
+.font-mono,
+pre,
+code,
+textarea {
+  font-variant-ligatures: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }

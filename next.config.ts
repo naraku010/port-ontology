@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
+// Tauri serves the frontend as static files, so the app is a static export (SPA).
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  images: { unoptimized: true },
+  devIndicators: false,
   turbopack: {
     rules: {
       "*.css": {
